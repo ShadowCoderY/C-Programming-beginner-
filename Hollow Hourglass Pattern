@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+printf("Input odd no. of lines(ODD Integer value)\n");
+int n;
+scanf("%d",&n);
+
+
+for (int i =1; i<=n;i++)
+    printf("* ");
+    printf("\n");
+
+    for (int x = 1;x<=(n/2) -1;x++) //top (HEAD)
+    {
+
+        for (int m =1;m<=x;m++) //spaces at the beginning
+        {
+            printf("_ ");
+        }
+        printf("* ");
+
+      for (int t1 = (n/2)-1 ; t1>=x; t1--) //t1 & t2 makes isosceles triangle space pattern in the middle
+      printf("_ ");
+      for (int t2 = n/2 - 2 ;t2>=x;t2--)
+        printf("_ ");
+
+
+
+        printf("* \n");
+
+
+    }
+    
+    ///middle part of the pattern
+    for (int z =1;z<=n/2;z++)
+        printf("_ ");
+    printf("*\n"); ///a single star
+
+    
+    ///rest half (BUTTOM/ASS)
+    for (int p =1;p<= (n/2) -1;p++)
+    {
+        for (int bs1 = n/2 -1;bs1>=p;bs1--)
+            printf("_ "); ///beginning space patern in the buttom part
+
+        printf("* ");
+
+        for (int h1 = 1;h1<=p;h1++) ///h1 & h2 makes up isosceles triangle for the space pattern in the middle
+            printf("_ ");
+        for (int h2 = 1;h2<p;h2++)
+            printf("_ ");
+
+        printf("* ");
+
+        printf("\n");
+
+
+    }
+    for (int f1 = 1;f1<=n;f1++)
+        printf("* "); ///The last line 
+
+}
+
+
+
