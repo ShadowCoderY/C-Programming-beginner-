@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+///I have constructed this pascals triangle in the simplest logic using NESTED LOOP & 1D ARRAY
+
+int main()
+{
+
+int array [100];
+
+printf("Input no. of Lines:\n");
+int Line ;
+scanf("%d",&Line);
+
+for (int i =1;i<=Line;i++)
+{
+    //space's loop
+    for (int space =Line;space >i;space--)
+        printf(" ");
+
+
+    array[0]=1;
+    array[i-1]=1;
+
+    for (int j=1;j<=i;j++)
+    {
+        printf("%d ",array[j-1]);
+    //updating the array
+    if (j==i)
+    {
+        for (int x=i;x>0;x--)
+        {
+            array[x] = array[x] + array[x-1];
+        }
+    }
+    }
+
+     printf("\n");
+    }
+
+
+}
+
+
+
