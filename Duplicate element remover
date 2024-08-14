@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+///duplicate element remover including itself
+/* MAIN THEME:
+> once duplicate found each slot is being replaced with adjacent
+>size variable is deducted
+
+*/
+
+
+int main (void)
+{
+    int size;
+    printf("Input size\n");
+    scanf("%d",&size);
+
+    int array [size];
+
+    printf("\n Input elements :\n");
+
+    for (int i =0;i <size ; i++) //input elements
+        scanf("%d",&array[i]);
+
+    int count =0;
+
+    ///duplicate checker
+    for (int i =0; i<size-1 ;i++)
+    {
+        count =0;
+
+        for (int j = i+1; j<size;j++)
+        {
+            if (array[i] == array[j])
+            {
+                count =1;
+                for(int c = j; c<size;c++) ///removing the adjacent duplicates
+                {
+                    array[c] =array[c+1];
+                }
+                size--; ///size reduced once shifted
+                j--;/// rechecking of the new element of existing j slot
+            }
+        }
+
+        if (count == 1)
+        {
+
+
+        for (int c = i;c<size;c++) ///finally removing the element that had duplicates
+            array[c] = array[c+1];
+
+            size--;
+            i--; ///rechecking the new element in existing slot
+        }
+
+
+    }
+
+
+ printf("\n\nSorted ARRAY: \n");
+ ///output of sorted array
+ for (int i =0 ;i<size;i++)
+        printf("%d ",array[i]);
+
+}
