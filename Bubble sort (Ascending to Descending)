@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+/*main theme
+>compare with the most adjacent neighbour
+>the last slot (with i) doesn't require to check, since after that there's garbage elements , since the last element is placed in right order as it's being compared by means of j
+> i : zero th index , upto n-2 
+>j : from i+1 (most adjacent comparison)
+
+*/
+
+
+
+
 ///concept of bubble sort
 ///let's work on ascending to descending
 
