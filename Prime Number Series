@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+///printing series of prime numbers:
+///2 3 5 7 11 13
+printf("Input no. of terms\n");
+int num;
+scanf("%d",&num);
+
+int count = 0, prime =0;
+
+
+for (int i=2;3;i++) /// 3 as a condition is always true (IN C Any value except zero is conditionally true)
+{
+      if (num<=0)  ///incase user input num <= 0;
+       break;
+
+
+      prime =1;
+
+      for (int j = 2; j<= i/2 ;j++) ///checking if the value of i is prime or not
+      {
+
+           if (i%j == 0)
+           {   prime = 0;
+              break; ///once i get's divisible
+
+           }
+      }
+
+
+    if (prime == 1) ///value of i never getting divisible
+    {
+         count++;
+         printf("%d ",i);
+
+    }
+
+    if (count == num )
+    break;
+
+}
+
+}
