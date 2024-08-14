@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+///palindrome checker
+
+printf("Input the num\n");
+int num;
+scanf("%d",&num);
+int rev=0;
+int temp = num; ///storing the original value of num to compare with the reverse later
+
+///Test no. 1234
+///0*10   + 4 = 4
+///4*10   + 3 =43
+///43*10  + 2 =432
+///432*10 + 1 =4321 (reverse)
+
+for (;num!=0;num /=10)
+{
+    rev =rev * 10 +num%10;
+
+}
+
+if (temp == rev)
+    printf("Palindrome: %d",rev);
+
+    else printf("Not paindrome");
+
+}
