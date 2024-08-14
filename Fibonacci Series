@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+/// 0 1 1 2 3 5 8 13....
+///Printing any series is simple, when you understand the mechanism/work behind each term
+
+
+int main()
+{
+
+int n;
+printf("Input num\n");
+scanf("%d",&n);
+
+int  first = 0, second = 1, sum=0 ;
+for (int i =1;i<=n ;i++)
+{
+   printf("%d ",first);
+
+    sum = first + second;
+     first = second;
+     second = sum;
+
+
+
+}
+
+
+}
