@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+///concept of bubble sort
+///let's work on ascending to descending
+
+
+
+
+///example: 1 4 7 9 0 9
+///here, exchange is made with the most nearest adjacent (main trick to understand)
+
+
+int main (void)
+{
+
+    printf("Input Size: \n");
+int size ;
+scanf("%d",&size);
+int array [size]; ///adjust size or take user input based on necesity
+
+printf("Input elements:\n\n");
+for (int i =0;i<size ; i++) ///array input
+    scanf("%d",&array[i]);
+
+///ordering
+for (int i =0;i<size-1;i++) ///size-1 because, we don't need to check for the last element, since after that, there exists only garbage values
+{
+
+    for (int j =i+1; j<size; j++) ///checking from the nearest neighbour
+    {
+        if (array[i] >array[j])
+        {
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+
+}
+
+printf("Array output:\n");
+ for (int i =0;i<size ; i++) ///array print
+    printf("%d ",array[i]);
+}
+
