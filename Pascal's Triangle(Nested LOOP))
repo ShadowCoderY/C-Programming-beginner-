@@ -7,11 +7,12 @@
 int main(void)
 {
 
-    int arr[100];
+    
     int line;
     printf("Input No.of Lines:-\n");
     scanf("%d",&line);
 
+int arr[line];
 
     for(int i =1 ;i<=line;i++) 
     {
