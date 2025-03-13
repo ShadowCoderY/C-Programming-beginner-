@@ -1,46 +1,53 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
 
-///I have constructed this pascals triangle in the simplest logic using NESTED LOOP & 1D ARRAY
-
-int main()
+int main(void)
 {
 
-int array [100]; ///adjust the size based on your need
+    int arr[100];
+    int line;
+    printf("Input No.of Lines:-\n");
+    scanf("%d",&line);
 
-printf("Input no. of Lines:\n");
-int Line ;
-scanf("%d",&Line);
 
-for (int i =1;i<=Line;i++)
-{
-    //space's loop
-    for (int space =Line;space >i;space--)
-        printf(" ");
-
-//first & last element is 1
-    array[0]=1;
-    array[i-1]=1;
-
-///printing the elements & updating at last iteration of j
-    for (int j=1;j<=i;j++)
+    for(int i =1 ;i<=line;i++) 
     {
-        printf("%d ",array[j-1]);
-    //updating the array
-    if (j==i)
-    {
-        for (int x=i;x>0;x--)
+        //space
+        for(int space = i; space<line;space++)
+            printf(" ");
+
+        arr[0] = 1; //alwys (first lement)
+        arr[i-1] = 1; //always (last element)
+
+        //display array from beginning till i, row number = column reps
+        //if row = 1 , column to repeat  = 1
+        //if row  = 3, column to repeat  = 3; (1 2 1)
+        for(int disp = 0;disp<i;disp++)
+            printf("%d ",arr[disp]);
+
+            
+            //main theme is here: 
+            /* next row will be like this:
+            >current index =   sum of (current index+ previous index)
+           
+            if current row:
+                1 2 1
+                 index 2 = index 2+ index 1 = 1 + 2= 3
+                index 1 = index 1 + index 0 = 2 + 1 = 3
+                
+                >>the next row will be like this:
+                1 3 3 1
+                >>don't worry about index 0  or last index of each line ,since we always set it to 1
+            */
+            
+            //updating array for next row
+        for(int next = i-1;next>=1;next--)
         {
-            array[x] = array[x] + array[x-1];
+            arr[next] = arr[next] + arr[next-1]; //sum of (current index+ previous index)
         }
-    }
-    }
 
-     printf("\n");
+printf("\n");
+
     }
 
 
 }
-
-
-
