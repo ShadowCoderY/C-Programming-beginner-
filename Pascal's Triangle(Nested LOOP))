@@ -1,5 +1,9 @@
 #include<stdio.h>
 
+//How i hit the idea of using array in pattern printing?
+//Since in pascals triangle there's not really some good right angle triangle to divide into(except space's triangle).
+//Instead we can use array to handle it.
+//The main trick is given below under main theme section (commented below)
 int main(void)
 {
 
@@ -15,12 +19,14 @@ int main(void)
         for(int space = i; space<line;space++)
             printf(" ");
 
-        arr[0] = 1; //alwys (first lement)
+        arr[0] = 1; //always (first element)
         arr[i-1] = 1; //always (last element)
 
         //display array from beginning till i, row number = column reps
         //if row = 1 , column to repeat  = 1
         //if row  = 3, column to repeat  = 3; (1 2 1)
+
+
         for(int disp = 0;disp<i;disp++)
             printf("%d ",arr[disp]);
 
